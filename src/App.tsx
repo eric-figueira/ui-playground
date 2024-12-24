@@ -2,6 +2,10 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import { Home } from "./routes/home"
 import { Layout } from "./components/layout"
 import { CarbonButton } from "./routes/components/button/carbon"
+import { ButtonPage } from "./routes/components/button"
+import { AlertPage } from "./routes/components/alert"
+import { DialogPage } from "./routes/components/dialog"
+import { SelectPage } from "./routes/components/select"
 
 const router = createBrowserRouter([
   {
@@ -12,16 +16,28 @@ const router = createBrowserRouter([
       { 
         path: 'components', 
         children: [
-          { index: true, element: <Navigate to="/components/buttons/carbon" replace /> },
+          { index: true, element: <Navigate to="/components/button" replace /> },
           {
-            path: 'buttons',
+            path: 'button',
+            element: <ButtonPage />,
             children: [
-              { index: true, element: <Navigate to="/components/buttons/carbon" replace /> },
               {
                 path: 'carbon',
                 element: <CarbonButton />
               }
             ]
+          },
+          {
+            path: 'alert',
+            element: <AlertPage />,
+          },
+          {
+            path: 'dialog',
+            element: <DialogPage />,
+          },
+          {
+            path: 'select',
+            element: <SelectPage />,
           }
         ]
       },
