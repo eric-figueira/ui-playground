@@ -1,0 +1,22 @@
+.box {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+}
+
+.parent, .neighboor {
+  display: flex;
+  gap: 1px;
+}
+
+.child {
+  color: blue;
+}
+
+.parent > .child {
+  background-color: aquamarine;
+}
+
+.neighboor .child {
+  background-color: aquamarine;
+}
