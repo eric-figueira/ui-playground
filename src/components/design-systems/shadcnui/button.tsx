@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
-import { cn } from "../../lib/cn";
+import { cn } from "../../../lib/cn"
 
 const buttonVariants = tv({
   base: "rounded-md font-medium flex justify-center items-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-zinc-600 transition disabled:opacity-80 disabled:cursor-not-allowed disabled:pointer-events-none",
