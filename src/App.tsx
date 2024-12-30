@@ -1,22 +1,54 @@
-import { Button } from "./components/design-systems/shadcnui/button";
+import { Button, ButtonIcon } from "./components/design-systems/shadcnui/button";
 import { Input } from "./components/design-systems/shadcnui/input";
+import { Icons } from "./components/icons";
 
 export function App() {
   return (
-    <main className="w-fulll h-screen bg-slate-900">
-      <div className="w-1/2 h-screen bg-slate-950 float-right flex items-center justify-center">
-        <div className="flex flex-col items-center gap-16">
-          <div className="text-center space-y-4">
-            <h1 className="font-sans font-bold text-3xl text-slate-50 leading-none">Expenses Dashboard</h1>
-            <p className="font-medium text-slate-400 text-xl leading-none">Acesse digitando a chave no campo abaixo.</p>
-          </div>
+    <main className="w-fulll h-screen bg-slate-100 flex items-center justify-center">
+      <div className="border border-zinc-300 shadow-md rounded-md p-6 w-full max-w-md bg-slate-50 space-y-6">
+        <Icons.logo className="mx-auto size-12" />
+        
+        <div className="space-y-4">
+          <h1 className="font-sans tracking-tight font-semibold text-2xl">Sign in now</h1>
 
-          <div className="flex flex-col items-center gap-4 w-full px-4">
-            <div className="inline-flex gap-2 w-full">
-              <Input placeholder="Digite a chave" className="w-full"/>
-              <Button>Acessar</Button>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex flex-col gap-1">
+                <label htmlFor="email" className="text-sm font-medium">Email</label>
+                <Input placeholder="Email" id="email" />
+              </div>
+
+              <Button className="w-full">Sign in</Button>
             </div>
-            <p className="text-sm text-slate-400 font-medium">Built by eric-figueira</p>
+
+            <div className="flex items-center gap-2">
+              <div className="w-full h-[1px] bg-zinc-300" />
+              <span className="text-sm text-zinc-400 font-light">OR</span>
+              <div className="w-full h-[1px] bg-zinc-300" />
+            </div>
+
+            <div className="space-y-1">
+              <Button 
+                variant="outline"
+                className="text-md font-normal w-full justify-between border-zinc-300 text-zinc-600"
+              >
+                Sign in with GitHub
+                <ButtonIcon icon={Icons.github} />
+              </Button>
+
+              <Button 
+                variant="outline"
+                className="text-md font-normal w-full justify-between border-zinc-300 text-zinc-600"
+              >
+                Sign in with X
+                <ButtonIcon icon={Icons.x} />
+              </Button>
+            </div>
+
+            <div className="flex gap-1 justify-center text-sm">
+              <p className="text-zinc-700">Don't have an account?</p>
+              <span className="text-zinc-800 underline underline-offset-4 cursor-pointer hover:text-zinc-950">Create one here.</span>
+            </div>
           </div>
         </div>
       </div>
